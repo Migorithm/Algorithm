@@ -1,2 +1,1 @@
-"# Algorithm" 
-"# Algorithm" 
+### This is a repository for algorithm practice.
