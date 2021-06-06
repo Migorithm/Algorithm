@@ -48,13 +48,20 @@ def BSF(ins):
     point =[p]
     while len(point) < min(l, n + 1) and ways != deque([]):
         line = list(filter(lambda x: p in x ,ways))
-        for i in line:
-            ways.remove(i)
-        order = sorted(map(lambda x: (x[0],x[1]) if x[0] ==p else (x[1],x[0]),line),key=lambda key :key[1])
-        for i, j in order:
-            point.append(j)
-            road_taken.appendleft(j)
-        p = road_taken.pop()
+        if line != []:
+            for i in line:
+                ways.remove(i)
+            order = sorted(map(lambda x: (x[0],x[1]) if x[0] ==p else (x[1],x[0]),line),key=lambda key :key[1])
+            for i, j in order:
+                point.append(j)
+                road_taken.appendleft(j)
+            p = road_taken.pop()
+        else:
+            try :
+                p = road_taken.pop()
+            except:
+                print("No road")
+                break
     for i in point:
         if i == point[-1]:
             print(i)
