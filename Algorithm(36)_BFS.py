@@ -33,41 +33,34 @@
 
 3 1 2 5 4
 3 1 4 2 5
-
-
 '''
+
 import sys
 from collections import deque
-from functools import reduce
 
 
-def DSF(ins):
-    l,n,p = map(int,ins)
-    ways = deque(tuple(map(int,sys.stdin.readline().replace('\n','').split())) for i in range(n))
-   # ways = deque([(3,5),(4,3),(4,1),(4,7),(9,4),(5,2),(5,6),(8,5)])
-    road_taken= [p]
+
+
+def BSF(ins):
+    l, n, p = map(int, ins)
+    ways = deque(tuple(map(int, sys.stdin.readline().replace('\n', '').split())) for i in range(n))
+    road_taken= deque()
     point =[p]
-    while len(point) < min(l,n+1) and ways != deque([]):
-        line = [i for i in ways if p in i]
-        if line == []:
-            road_taken.pop()  #backtracking!
-            p = road_taken[-1]
-            continue
-        path = reduce(lambda x,y: x if sum(x) < sum(y) else y, line)
-        ways.remove(path)
-        valid = list(filter(lambda x:x not in point,path))
-        if valid != []:
-           point.append(valid[0])
-           road_taken.append(valid[0])
-           p = point[-1]
-
+    while len(point) < min(l, n + 1) and ways != deque([]):
+        line = list(filter(lambda x: p in x ,ways))
+        for i in line:
+            ways.remove(i)
+        order = sorted(map(lambda x: (x[0],x[1]) if x[0] ==p else (x[1],x[0]),line),key=lambda key :key[1])
+        for i, j in order:
+            point.append(j)
+            road_taken.appendleft(j)
+        p = road_taken.pop()
     for i in point:
         if i == point[-1]:
             print(i)
         else:
-            print(i, end=' ')
+            print(i ,end= ' ')
 
 
-DSF(sys.stdin.readline().split())
 
-
+BSF(sys.stdin.readline().split())
