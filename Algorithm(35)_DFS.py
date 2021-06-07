@@ -43,16 +43,21 @@ from functools import reduce
 
 def DSF(ins):
     l,n,p = map(int,ins)
-    ways = deque(tuple(map(int,sys.stdin.readline().replace('\n','').split())) for i in range(n))
-   # ways = deque([(3,5),(4,3),(4,1),(4,7),(9,4),(5,2),(5,6),(8,5)])
+    #ways = deque(tuple(map(int,sys.stdin.readline().replace('\n','').split())) for i in range(n))
+    ways = deque([(4,2),(7,2),(4,3),(8,4),(1,7),(7,9)])
     road_taken= [p]
     point =[p]
     while len(point) < min(l,n+1) and ways != deque([]):
+        if road_taken ==[]:
+            break
         line = [i for i in ways if p in i]
         if line == []:
-            road_taken.pop()  #backtracking!
-            p = road_taken[-1]
-            continue
+            try:
+                road_taken.pop()  #backtracking!
+                p = road_taken[-1]
+                continue
+            except:
+                break
         path = reduce(lambda x,y: x if sum(x) < sum(y) else y, line)
         ways.remove(path)
         valid = list(filter(lambda x:x not in point,path))
@@ -68,6 +73,6 @@ def DSF(ins):
             print(i, end=' ')
 
 
-DSF(sys.stdin.readline().split())
-
+#DSF(sys.stdin.readline().split())
+DSF(("7" ,"6", "2"))
 
