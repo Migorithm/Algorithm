@@ -42,11 +42,14 @@ def solution(numbers, target):
 
 def solution2(numbers, target):
     l = [(x, -x) for x in numbers]
+    for i in product(*l):
+        print(i)
     s = list(map(sum, product(*l))) #Cartesian product
+
     return s.count(target)
 
 
 
-
+solution2([1,3,5,4,54,2],3)
 
 
