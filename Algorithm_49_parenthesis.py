@@ -2,7 +2,6 @@
 https://programmers.co.kr/learn/courses/30/lessons/60058
 """
 
-from collections import deque
 def solution(p):
     #base case
     if p =="":
@@ -23,8 +22,6 @@ def solution(p):
         repl2 = repl.replace(")","(")
         repl3 = repl2.replace(".",")")
         return ru + repl3
-
-
 
 
 
