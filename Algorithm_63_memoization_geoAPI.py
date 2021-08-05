@@ -13,11 +13,6 @@ proj_UTMK = Proj(init='epsg:5178')
 #WGS1984
 proj_WGS84 = Proj(init='epsg:4326')
 
-url_req = requests.get(url + req.format('서울특별시 종로구 누상동')).json()
-x1, y1 = url_req['result']['resultdata'][0]['x'], url_req['result']['resultdata'][0]['y']
-x2,y2 = transform(proj_UTMK,proj_WGS84,x1,y1)
-
-
 #memoization technique!
 hash2 = {}
 def getXY(df):
