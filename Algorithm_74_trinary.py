@@ -14,7 +14,6 @@ def solution(n):
                 n -= 3**(place-1)
                 place_holder.append(place-1)
                 place =0
-    print(place_holder)
     a = ""
     for i in place_holder:
         a += '1'+ ('0' * i) + " "
