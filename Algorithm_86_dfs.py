@@ -7,7 +7,7 @@ edgeList = [(0,1),(0,2),(1,0),(1,3),(2,0),(2,4),(2,5),(3,1),(4,2),(4,6),(5,2),(6
 
 
 def dfs(vertextList:list,edgeList:list):
-    adjacentList=[[] for vertex in vertextList]
+    adjacentList=[[] for vertex in vertextList] # a list of empty lists of which its number corresponds to that of vertex. 
 
     for edge in edgeList:
         adjacentList[edge[0]].append(edge[1])

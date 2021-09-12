@@ -1,0 +1,9 @@
+string= "burger.letters.com - - [01/Jul/1995:00:00:12 -0400] 'GET /shuttle/countdown/video/livevideo.GIF HTTP/1.0' 200 0"
+string= "burger.letters.com - - [01/Jul/1995:00:00:12 -0400] 'GET /shuttle/countdown/video/livevideo.GIF HTTP/1.0' 200 0"
+string= "burger.letters.com - - [01/Jul/1995:00:00:12 -0400] 'GET /shuttle/countdown/video/livevideo.GIF HTTP/1.0' 200 0"
+string= "burger.letters.com - - [01/Jul/1995:00:00:12 -0400] 'GET /shuttle/countdown/video/livevideo.GIF HTTP/1.0' 200 0"
+string= "burger.letters.com - - [01/Jul/1995:00:00:12 -0400] 'GET /shuttle/countdown/video/livevideo.GIF HTTP/1.0' 200 0"
+
+string= "burger.letters.com - - [01/Jul/1995:00:00:12 -0400] 'GET /shuttle/countdown/video/69HC680.GIF HTTP/1.0' 200 0"
+string= "burger.letters.com - - [01/Jul/1995:00:00:12 -0400] 'GET /shuttle/countdown/video/69HC683.GIF HTTP/1.0' 200 0"
+
