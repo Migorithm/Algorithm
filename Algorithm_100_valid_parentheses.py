@@ -16,7 +16,7 @@ class Solution(object):
                                 #if it's ),} or ]
                 if len(opens) == 0:
                     return 0
-                if self.PAIRS[opens.pop()] != x: #paring.
+                if self.PAIRS[opens.pop()] != x: #paring. By poping the last value of list and put them into dictionary as an argument, it mapps things.
                     return 0
         return len(opens) == 0
 
